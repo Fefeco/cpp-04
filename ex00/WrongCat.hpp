@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcarranz <fcarranz@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/26 16:48:45 by fcarranz          #+#    #+#             */
-/*   Updated: 2025/02/26 20:59:55 by fcarranz         ###   ########.fr       */
+/*   Created: 2025/02/26 20:22:48 by fcarranz          #+#    #+#             */
+/*   Updated: 2025/02/26 20:23:25 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#pragma once
 #include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "WrongCat.hpp"
 
-int main()
-{
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new WrongCat();
+class WrongCat : public Animal {
+public:
+	WrongCat(void);
+	WrongCat(const WrongCat &other);
+	~WrongCat(void);
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
+	WrongCat &operator=(const WrongCat &other);
 
-	delete meta;
-	delete j;
-	delete i;
-
-	return 0;
-}
+	void makeSound(void) const;
+};

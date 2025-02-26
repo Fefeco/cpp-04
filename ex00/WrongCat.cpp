@@ -6,7 +6,7 @@
 /*   By: fcarranz <fcarranz@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 20:23:39 by fcarranz          #+#    #+#             */
-/*   Updated: 2025/02/26 20:26:40 by fcarranz         ###   ########.fr       */
+/*   Updated: 2025/02/26 21:27:10 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 /*
 * Constructors
  */
-WrongCat::WrongCat(void) : Animal("WrongCat") {
+WrongCat::WrongCat(void) : WrongAnimal("WrongCat") {
 	std::cout << "WrongCat default constructor called" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat &other) : Animal(other) {
+WrongCat::WrongCat(const WrongCat &other) : WrongAnimal(other) {
 	std::cout << "WrongCat default copy constructor called" << std::endl;
 }
 
@@ -35,12 +35,7 @@ WrongCat::~WrongCat(void) { std::cout << "WrongCat destructor called" << std::en
  */
 WrongCat &WrongCat::operator=(const WrongCat &other) {
 	if (this != &other) {
-		Animal::operator=(other);
+		WrongAnimal::operator=(other);
 	}
 	return *this;
 }
-
-/*
-* Mandatory member functions
- */
-void WrongCat::makeSound(void) const { std::cout << "Zzzssssspssstaaaaa!" << std::endl; }

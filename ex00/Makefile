@@ -6,7 +6,7 @@
 #    By: fcarranz <fcarranz@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/24 10:12:56 by fcarranz          #+#    #+#              #
-#    Updated: 2025/02/26 20:25:50 by fcarranz         ###   ########.fr        #
+#    Updated: 2025/02/26 21:22:11 by fcarranz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ SRC=main.cpp \
 	Animal.cpp \
 	Dog.cpp \
 	Cat.cpp \
-	WrongCat.cpp
+	WrongCat.cpp \
+	WrongAnimal.cpp
 
 OBJ=$(SRC:.cpp=.o)
 DEP=$(SRC:.cpp=.d)

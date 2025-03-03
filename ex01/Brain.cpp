@@ -6,7 +6,7 @@
 /*   By: fcarranz <fcarranz@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 17:13:21 by fcarranz          #+#    #+#             */
-/*   Updated: 2025/02/27 21:04:09 by fcarranz         ###   ########.fr       */
+/*   Updated: 2025/03/03 13:38:08 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,14 @@ Brain::~Brain(void) {
 * Overload operator
  */
 Brain &Brain::operator=(const Brain &other) {
-	std::cout << "Asignment operator called" << std::endl;
+	std::cout << "Brain asignment operator called" << std::endl;
 	if (this != &other) {
 		for (int i = 0; i < 100; i++) {
-			ideas[i] = std::string(other.ideas[i]);
+			if (!other.ideas[i].empty())
+			{
+				++totalIdeas;
+				ideas[i] = other.ideas[i];
+			}
 		}
 	}
 	return *this;
@@ -56,7 +60,7 @@ void Brain::getIdea(int nbIdea) const {
 		std::cout << "Brain has not this many ideas yet" << std::endl;
 		return ;
 	}
-	std::cout << ideas[nbIdea] << std::endl;
+	std::cout << " ++ Idea: " << ideas[nbIdea] << std::endl;
 }
 
 void Brain::getIdea(void) const {

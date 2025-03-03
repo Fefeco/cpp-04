@@ -6,7 +6,7 @@
 /*   By: fcarranz <fcarranz@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 16:48:45 by fcarranz          #+#    #+#             */
-/*   Updated: 2025/02/27 21:26:41 by fcarranz         ###   ########.fr       */
+/*   Updated: 2025/03/03 13:07:14 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,21 @@
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
+
+void testBrain2(void) {
+	Dog* dog1 = new Dog();
+	Dog* dog2 = new Dog();
+
+	std::cout << "Set IDEA" << std::endl;
+	dog1->setIdea("EAT");
+	*dog2 = *dog1;
+//	dog2->getIdea();
+//	dog1->getIdea();
+//
+	delete dog1;
+	dog2->getIdea();
+	delete dog2;
+}
 
 void testBrain(void) {
 	Dog* dog1 = new Dog();
@@ -65,6 +80,7 @@ int main()
 //	delete j;
 //	delete i;
 
-	testBrain();
+	//testBrain();
+	testBrain2();
 	return 0;
 }

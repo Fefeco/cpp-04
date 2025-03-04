@@ -6,57 +6,96 @@
 /*   By: fcarranz <fcarranz@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 16:48:45 by fcarranz          #+#    #+#             */
-/*   Updated: 2025/03/03 13:07:14 by fcarranz         ###   ########.fr       */
+/*   Updated: 2025/03/04 14:49:47 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <ctime>
+#include <cstdlib>
+#include "colors.hpp"
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 
+void printTestHeader(const std::string& message) {
+	std::cout << GREEN << message << std::endl;
+	for (unsigned long i = 0; i < message.length(); i++)
+		std::cout << "=";
+	std::cout << RST << std::endl;
+}
+
+void printSubtitle(const std::string& message) {
+	std::cout << GREEN << message << RST << std::endl;
+}
+
 void testBrain2(void) {
+	printTestHeader("Create dog1");
 	Dog* dog1 = new Dog();
+
+	printTestHeader("Set IDEAS on dog1");
+	dog1->setIdea("EAT");
+	dog1->setIdea("SLEEP");
+	dog1->setIdea("SNIFF");
+
+	printTestHeader("Create dog2");
 	Dog* dog2 = new Dog();
 
-	std::cout << "Set IDEA" << std::endl;
-	dog1->setIdea("EAT");
+	printTestHeader("Ask for random idea on dog2");
+	dog2->getIdea();
+
+	printTestHeader("Clone dog1 on dog2");
 	*dog2 = *dog1;
-//	dog2->getIdea();
-//	dog1->getIdea();
-//
+
+	printTestHeader("Get IDEA 0 on dog2");
+	dog2->getIdea(0);
+	printTestHeader("Get random IDEA on dog2");
+	dog2->getIdea();
+	printTestHeader("Get random IDEA on dog1");
+	dog1->getIdea();
+
 	delete dog1;
+	printTestHeader("Get random IDEA from dog2 after delete dog1");
 	dog2->getIdea();
 	delete dog2;
 }
 
 void testBrain(void) {
+	printTestHeader("Create dog1 and dog2");
 	Dog* dog1 = new Dog();
 	Cat* cat1 = new Cat();
 
+	printTestHeader("Set IDEAS on dog1");
 	dog1->setIdea("idea 1");
 	dog1->setIdea("idea 2");
 	dog1->setIdea("idea 3");
 
+	printTestHeader("Set IDEAS on cat1");
 	cat1->setIdea("walk");
 	cat1->setIdea("climb");
 	cat1->setIdea("eat");
 
+	printTestHeader("Get random IDEA on cat1");
 	cat1->getIdea();
-
+	printTestHeader("Get IDEA 2 on dog1");
 	dog1->getIdea(2);
+	printTestHeader("Get random IDEA on dog1");
 	dog1->getIdea();
 
-	Dog* dog2 = new Dog();
+	printTestHeader("Create dog2 with copy constructor");
+	Dog* dog2 = new Dog(*dog1);
 
-	*dog2 = *dog1;
 	delete dog1;
+	printTestHeader("Get IDEAS 3 nd 5 from dog2 after delete dog1");
 	dog2->getIdea(3);
 	dog2->getIdea(5);
 
-	Cat* cat2 = new Cat(*cat1);
+	printTestHeader("Create cat2 with assignment operator");
+	Cat* cat2 = new Cat();
+	*cat2 = *cat1;
 	delete cat1;
 
+	printTestHeader("Get IDEAS 2 and 9 from cat2 after delete cat1");
 	cat2->getIdea(2);
 	cat2->getIdea(9);
 	
@@ -66,21 +105,8 @@ void testBrain(void) {
 
 int main()
 {
-//	const Animal* meta = new Animal();
-//	const Animal* j = new Dog();
-//	const Animal* i = new Cat();
-//
-//	std::cout << j->getType() << " " << std::endl;
-//	std::cout << i->getType() << " " << std::endl;
-//	i->makeSound(); //will output the cat sound!
-//	j->makeSound();
-//	meta->makeSound();
-//
-//	delete meta;
-//	delete j;
-//	delete i;
-
-	//testBrain();
-	testBrain2();
+	srand(time(NULL));
+	testBrain();
+	//testBrain2();
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: fcarranz <fcarranz@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 17:45:37 by fcarranz          #+#    #+#             */
-/*   Updated: 2025/03/03 12:40:45 by fcarranz         ###   ########.fr       */
+/*   Updated: 2025/03/04 10:33:01 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ Dog &Dog::operator=(const Dog &other) {
 		Animal::operator=(other);
 		delete brain;
 		brain = new Brain();
-		std::cout << " :: Inside = " << std::endl;
 		*brain = *(other.brain);
 	}
 	return *this;

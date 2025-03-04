@@ -6,12 +6,13 @@
 /*   By: fcarranz <fcarranz@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 17:13:21 by fcarranz          #+#    #+#             */
-/*   Updated: 2025/03/03 13:38:08 by fcarranz         ###   ########.fr       */
+/*   Updated: 2025/03/04 14:40:31 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <cstdlib>
+#include <ctime>
 #include "Brain.hpp"
 
 /*
@@ -56,11 +57,11 @@ Brain &Brain::operator=(const Brain &other) {
 * Extra member functions
  */
 void Brain::getIdea(int nbIdea) const {
-	if (nbIdea > totalIdeas) {
+	if (nbIdea > totalIdeas - 1) {
 		std::cout << "Brain has not this many ideas yet" << std::endl;
 		return ;
 	}
-	std::cout << " ++ Idea: " << ideas[nbIdea] << std::endl;
+	std::cout << "Idea: " << ideas[nbIdea] << std::endl;
 }
 
 void Brain::getIdea(void) const {
@@ -76,5 +77,6 @@ void Brain::setIdea(std::string &idea) {
 		std::cout << "Brain is full" << std::endl;
 		return ;
 	}
+	std::cout << "Idea [" << idea << "] set on possition " << totalIdeas << std::endl;
 	ideas[totalIdeas++] = idea;
 }

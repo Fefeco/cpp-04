@@ -6,15 +6,15 @@
 /*   By: fcarranz <fcarranz@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 17:16:58 by fcarranz          #+#    #+#             */
-/*   Updated: 2025/02/27 20:37:00 by fcarranz         ###   ########.fr       */
+/*   Updated: 2025/03/08 13:05:09 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
-class Cat : public Animal {
+class Cat : public AAnimal {
 public:
 	Cat(void);
 	Cat(const Cat &other);

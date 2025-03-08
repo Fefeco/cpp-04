@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcarranz <fcarranz@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 16:55:52 by fcarranz          #+#    #+#             */
-/*   Updated: 2025/03/04 14:59:12 by fcarranz         ###   ########.fr       */
+/*   Updated: 2025/03/08 13:02:20 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <string>
 
-class Animal {
+class AAnimal {
 public:
-	Animal(void);
-	Animal(std::string type);
-	Animal(const Animal &other);
-	virtual ~Animal(void);
+	AAnimal(void);
+	AAnimal(std::string type);
+	AAnimal(const AAnimal &other);
+	virtual ~AAnimal(void);
 
-	Animal &operator=(const Animal &other);
+	AAnimal &operator=(const AAnimal &other);
 
 	virtual void makeSound(void) const = 0;
 	std::string getType() const;

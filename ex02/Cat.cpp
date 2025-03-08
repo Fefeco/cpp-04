@@ -6,7 +6,7 @@
 /*   By: fcarranz <fcarranz@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 17:58:47 by fcarranz          #+#    #+#             */
-/*   Updated: 2025/03/04 10:39:22 by fcarranz         ###   ########.fr       */
+/*   Updated: 2025/03/08 13:05:55 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 /*
 * Constructors
  */
-Cat::Cat(void) : Animal("Cat") {
+Cat::Cat(void) : AAnimal("Cat") {
 	std::cout << "Cat default constructor called" << std::endl;
 	brain = new Brain();
 }
 
-Cat::Cat(const Cat &other) : Animal(other) {
+Cat::Cat(const Cat &other) : AAnimal(other) {
 	std::cout << "Cat default copy constructor called" << std::endl;
 	brain = new Brain();
 	*brain = *(other.brain);
@@ -42,7 +42,7 @@ Cat::~Cat(void) {
  */
 Cat &Cat::operator=(const Cat &other) {
 	if (this != &other) {
-		Animal::operator=(other);
+		AAnimal::operator=(other);
 		delete brain;
 		brain = new Brain();
 		*brain = *(other.brain);

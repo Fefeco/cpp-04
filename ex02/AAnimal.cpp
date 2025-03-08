@@ -1,44 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcarranz <fcarranz@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 17:31:23 by fcarranz          #+#    #+#             */
-/*   Updated: 2025/03/04 15:00:01 by fcarranz         ###   ########.fr       */
+/*   Updated: 2025/03/08 13:01:07 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include <iostream>
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
 /*
 * Constructors
  */
-Animal::Animal(void) {
-	std::cout << "Animal default constructor called" << std::endl;
+AAnimal::AAnimal(void) {
+	std::cout << "AAnimal default constructor called" << std::endl;
 }
 
-Animal::Animal(std::string _type) : type(_type) {
-	std::cout << "Animal constructor called" << std::endl;
+AAnimal::AAnimal(std::string _type) : type(_type) {
+	std::cout << "AAnimal constructor called" << std::endl;
 }
 
-Animal::Animal(const Animal &other) {
-	std::cout << "Animal default copy constructor called" << std::endl;
+AAnimal::AAnimal(const AAnimal &other) {
+	std::cout << "AAnimal default copy constructor called" << std::endl;
 	type = other.getType();
 }
 
 /*
 * Destructor
  */
-Animal::~Animal(void) { std::cout << "Animal destructor called" << std::endl; }
+AAnimal::~AAnimal(void) { std::cout << "AAnimal destructor called" << std::endl; }
 
 /*
 * Overload operator
  */
-Animal &Animal::operator=(const Animal &other) {
+AAnimal &AAnimal::operator=(const AAnimal &other) {
 	if (this != &other) {
 		type = other.getType();
 	}
@@ -48,4 +48,4 @@ Animal &Animal::operator=(const Animal &other) {
 /*
 * Mandatory member functions
  */
-std::string Animal::getType(void) const { return type; }
+std::string AAnimal::getType(void) const { return type; }

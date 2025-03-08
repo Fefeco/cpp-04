@@ -6,7 +6,7 @@
 #    By: fcarranz <fcarranz@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/24 10:12:56 by fcarranz          #+#    #+#              #
-#    Updated: 2025/03/04 15:00:10 by fcarranz         ###   ########.fr        #
+#    Updated: 2025/03/08 13:02:35 by fcarranz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS=-Wall -Wextra -Werror -std=c++98
 OBJ_FLAGS = $(CFLAGS) -MMD -g -c
 
 SRC=main.cpp \
-	Animal.cpp \
+	AAnimal.cpp \
 	Dog.cpp \
 	Cat.cpp \
 	WrongCat.cpp \

@@ -6,7 +6,7 @@
 /*   By: fcarranz <fcarranz@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 16:48:45 by fcarranz          #+#    #+#             */
-/*   Updated: 2025/03/04 14:49:47 by fcarranz         ###   ########.fr       */
+/*   Updated: 2025/03/08 12:57:12 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,21 @@ void testBrain(void) {
 int main()
 {
 	srand(time(NULL));
-	testBrain();
+	//testBrain();
 	//testBrain2();
+
+/*
+  * Mandatorry test
+ */
+	Animal *array[10];
+
+	for (int i = 0; i < 10; i++) {
+		(i % 2 == 0) ? array[i] = new Dog() : array[i] = new Cat();
+	}
+
+	for (int i = 0; i < 10; i++) { array[i]->makeSound(); }
+
+	for (int i = 0; i < 10; i++) { delete array[i]; }
+
 	return 0;
 }

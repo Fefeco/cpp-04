@@ -6,7 +6,7 @@
 /*   By: fcarranz <fcarranz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 22:53:55 by fcarranz          #+#    #+#             */
-/*   Updated: 2025/03/05 22:54:29 by fcarranz         ###   ########.fr       */
+/*   Updated: 2025/03/08 13:43:21 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ public:
 
   Cure &operator=(Cure const &other);
 
-  std::string const & getType(void) const;
   AMateria* clone(void) const;
   void use(ICharacter& target);
 };

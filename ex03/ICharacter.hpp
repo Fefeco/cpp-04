@@ -6,12 +6,15 @@
 /*   By: fcarranz <fcarranz@student.42barcelo>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 11:04:26 by fcarranz          #+#    #+#             */
-/*   Updated: 2025/03/09 12:51:37 by fcarranz         ###   ########.fr       */
+/*   Updated: 2025/03/09 14:37:25 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <string>
+#include "AMateria.hpp"
+
+class AMateria;
 
 class ICharacter
 {

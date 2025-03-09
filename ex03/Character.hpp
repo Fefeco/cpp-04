@@ -6,12 +6,14 @@
 /*   By: fcarranz <fcarranz@student.42barcelo>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 11:11:48 by fcarranz          #+#    #+#             */
-/*   Updated: 2025/03/08 13:58:29 by fcarranz         ###   ########.fr       */
+/*   Updated: 2025/03/09 14:23:47 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include "ICharacter.hpp"
+#include "AMateria.hpp"
+#include <string>
 
 class Character : public ICharacter {
 public:

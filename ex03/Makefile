@@ -6,7 +6,7 @@
 #    By: fcarranz <fcarranz@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/24 10:12:56 by fcarranz          #+#    #+#              #
-#    Updated: 2025/03/08 11:00:18 by fcarranz         ###   ########.fr        #
+#    Updated: 2025/03/09 14:06:01 by fcarranz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ OBJ_FLAGS = $(CFLAGS) -MMD -g -c
 SRC=main.cpp \
 	AMateria.cpp \
 	Ice.cpp \
-	Cure.cpp
+	Cure.cpp \
+	Character.cpp
 
 OBJ=$(SRC:.cpp=.o)
 DEP=$(SRC:.cpp=.d)

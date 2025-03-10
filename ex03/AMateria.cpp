@@ -6,12 +6,13 @@
 /*   By: fcarranz <fcarranz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 18:56:23 by fcarranz          #+#    #+#             */
-/*   Updated: 2025/03/09 14:39:31 by fcarranz         ###   ########.fr       */
+/*   Updated: 2025/03/10 12:27:17 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
 #include <string>
+#include <iostream>
+#include "AMateria.hpp"
 
 /*
 * Constructors
